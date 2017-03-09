@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.dao.ICrawlTagDao">
+
+    <insert id="insertTag" parameterType="CrawlTag" keyProperty="id">
+        insert into crawl_tag(
+        supplier_id,pn,mfs,description,moq,inventory,amount,price)
+        values
+        (
+        #{supplierId},#{pn},#{mfs},#{description},#{moq},#{inventory},#{amount},#{price})
+    </insert>
+
+    <select id="findTagBySupplierId"  resultType="com.java.domain.CrawlTag">
+        select * from crawl_tag where supplier_id=#{supplierId}
+    </select>
+
+    <insert id="insertPriceTag" parameterType="OfficePriceTag" keyProperty="id">
+        insert into office_price_tag(
+        supplier_id,office_price,amount,price，if_condition)
+        values
+        (
+        #{supplierId},#{officePrice},#{amount},#{price}，#{ifCondition})
+    </insert>
+
+    <select id="findPriceTagBySupplierId"  resultType="com.java.domain.OfficePriceTag">
+        select * from office_price_tag where supplier_id=#{supplierId}
+    </select>
+</mapper>
