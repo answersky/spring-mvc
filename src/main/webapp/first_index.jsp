@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="security" uri="/security" %>
 <html>
 <head>
     <title>Exercise</title>
@@ -24,7 +25,12 @@
 <body>
 <%@ include file="WEB-INF/jsp/common/nav.jsp"%>
 <div class="content">
-
+    <security:hasAnyPermission name="123">
+        不显示
+    </security:hasAnyPermission>
+    <security:hasAnyPermission name="123">
+        显示123
+    </security:hasAnyPermission>
 </div>
 </body>
 </html>

@@ -340,6 +340,13 @@
       <version>4.3.2</version>
     </dependency>
 
+    <!--自定义标签-->
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>2.3.1</version>
+      <scope>provided</scope>
+    </dependency>
 
   </dependencies>
 
