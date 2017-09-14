@@ -6,7 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="security" uri="/security" %>
+<%@ taglib prefix="tf" uri="/function" %>
 <html>
 <head>
     <title>Exercise</title>
@@ -31,6 +33,12 @@
     <security:hasAnyPermission name="123">
         显示123
     </security:hasAnyPermission>
+
+    <c:if test="${tf:validatePermission('update',1,2)}">
+        ==============true
+    </c:if>
+
+
 </div>
 </body>
 </html>
